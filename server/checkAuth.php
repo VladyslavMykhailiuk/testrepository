@@ -1,4 +1,5 @@
 <?php
+session_save_path('/tmp');
 require 'cors.php';
 if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
 
@@ -6,5 +7,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
 } else {
     echo json_encode(['authenticated' => false]);
 }
+
+var_dump($_SESSION['authenticated']);
 
 

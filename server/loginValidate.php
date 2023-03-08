@@ -1,4 +1,5 @@
 <?php
+session_save_path('/tmp');
 session_start();
 require 'cors.php';
 require 'Database.php';
@@ -25,11 +26,11 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
        else {
            $out['success'] = true;
            $_SESSION['authenticated'] = true;
-
        }
        }
    }
 }
-header("Content-type: application/json");
+//var_dump($_SESSION['authenticated']);
+//header("Content-type: application/json");
 echo json_encode($out);
-die();
+//die();
